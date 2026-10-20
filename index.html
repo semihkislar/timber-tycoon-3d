@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#2b3a24">
+<title>Timber Tycoon 3D · Three.js prototype</title>
+<link rel="icon" href="legacy/assets/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/addons/"}}</script>
+</head>
+<body>
+<canvas id="gl" aria-label="Timber Tycoon factory, 3D view"></canvas>
+<div id="labels" aria-hidden="true"></div>
+
+<header id="hud">
+  <div class="brand"><span class="logo">🌲</span><b>Timber Tycoon</b><span class="chip3d">3D</span></div>
+  <div class="stat coins" title="Coins (live from the v2.22 simulation)"><span class="ico">🪙</span><b id="hCoins">–</b><small id="hIncome">+0/s</small></div>
+  <div class="stat" title="Logs per second"><span class="ico">🪵</span><b id="hLogs">–</b></div>
+  <div class="stat clock" title="In-game clock (drives the day/night light)"><span class="ico" id="hDayIco">☀️</span><b id="hClock">–</b></div>
+</header>
+
+<nav id="tools">
+  <button id="bDay" title="Light: auto / day / night">🌗</button>
+  <button id="bRotL" title="Rotate left">⟲</button>
+  <button id="bRotR" title="Rotate right">⟳</button>
+  <button id="bFit" title="Fit factory">⤢</button>
+  <button id="bMenu" title="Prototype menu">⋯</button>
+</nav>
+
+<div id="legend">
+  <span class="lg t1"><i>🚜</i>Forklift <em id="nFork">0</em></span>
+  <span class="lg t2"><i>⟿</i>Belt <em id="nBelt">0</em></span>
+  <span class="lg t3"><i>🛸</i>Drone <em id="nDrone">0</em></span>
+</div>
+
+<div id="menu" class="hidden">
+  <div class="mh">Prototype</div>
+  <button id="mImport">📥 Load a copy of my 2D save</button>
+  <button id="mDemo">🏭 Reset to demo factory</button>
+  <button id="mFps">📈 Toggle FPS meter</button>
+  <a href="https://semihkislar.github.io/timber-tycoon/" target="_blank" rel="noopener">↗ Open the 2D game</a>
+  <p class="note">Runs the real v2.22 simulation in its own save slot. Your 2D save is only ever read, never written.</p>
+</div>
+
+<section id="sheet" class="hidden" aria-live="polite">
+  <div class="grab"></div>
+  <div class="sh-head">
+    <div class="sh-ic" id="shIcon"></div>
+    <div class="sh-tt"><div class="sh-name"><span id="shName">–</span> <span id="shTier" class="tier"></span></div><div class="sh-sub" id="shSub">–</div></div>
+    <button class="sh-x" id="shClose" aria-label="Close">✕</button>
+  </div>
+  <div class="sh-body">
+    <div class="sh-row"><div class="sh-k">Level</div><div class="sh-v" id="shLvl">–</div></div>
+    <div class="sh-row"><div class="sh-k">Status</div><div class="sh-v"><div class="bar"><i id="shBar"></i></div><span id="shStat">–</span></div></div>
+    <div class="sh-recipe" id="shRecipe"></div>
+    <div class="sh-row"><div class="sh-k">Transport</div><div class="sh-v" id="shLink">–</div></div>
+  </div>
+  <button class="buy" id="shBuy"><span id="shBuyT">Upgrade</span><small id="shCost">–</small></button>
+</section>
+
+<div id="fps" class="hidden"></div>
+<div id="boot"><div class="spin"></div><div id="bootT">Starting the v2.22 simulation…</div></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

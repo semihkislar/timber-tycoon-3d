@@ -1,0 +1,51 @@
+{
+ "3d desktop 1440x900 pr1": {
+  "fps": 7.9,
+  "stats": {
+   "fps": 6.176652254478077,
+   "updMs": 0.28,
+   "renderCallMs": 1.63,
+   "calls": 117,
+   "tris": 110658,
+   "geos": 119,
+   "pr": 1
+  },
+  "errors": []
+ },
+ "3d mobile 390x844 pr2 (fixed)": {
+  "fps": 8.0,
+  "stats": {
+   "fps": 4.838865769863547,
+   "updMs": 0.34,
+   "renderCallMs": 1.38,
+   "calls": 104,
+   "tris": 108040,
+   "geos": 113,
+   "pr": 2
+  },
+  "errors": []
+ },
+ "3d mobile 390x844 adaptive": {
+  "fps": 8.0,
+  "stats": {
+   "fps": 8.450228156160218,
+   "updMs": 0.34,
+   "renderCallMs": 1.44,
+   "calls": 103,
+   "tris": 108496,
+   "geos": 113,
+   "pr": 1
+  },
+  "errors": []
+ },
+ "2d v2.22 desktop 1440x900": {
+  "fps": 35.3,
+  "stats": null,
+  "errors": []
+ },
+ "2d v2.22 mobile 390x844": {
+  "fps": 44.2,
+  "stats": null,
+  "errors": []
+ }
+}
