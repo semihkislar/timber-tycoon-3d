@@ -47,8 +47,8 @@ Measured in headless Chromium **without a GPU** (SwiftShader software WebGL), so
 
 | Scenario | 3D prototype | 2D v2.22 (same box) |
 |---|---|---|
-| Desktop 1440×900, pixel ratio 1 | ~8 fps (software GL) | ~35 fps (CPU canvas) |
-| Mobile 390×844 @3x (pixel ratio 2, mid quality) | ~8–10 fps (software GL) | ~44 fps |
+| Desktop 1440×900, pixel ratio 1 | 8–27 fps (software GL, varies with box load; 27 on the live URL run) | ~35 fps (CPU canvas) |
+| Mobile 390×844 @3x (pixel ratio 2, mid quality) | 8–27 fps (software GL) | ~44 fps |
 | Mobile, `?q=low` (pixel ratio 1, 1024 shadow map) | ~15 fps (software GL) | – |
 | JS work per frame (sim read + animation update) | **~0.3 ms** | – |
 | `renderer.render()` CPU submit time | **~1.3–2 ms** | – |
